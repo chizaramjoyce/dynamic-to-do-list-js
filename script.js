@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
 
-    function addTask() {
+    const addTask = () => {
         const taskText = taskInput.value;
 
         if (taskText === ("")) {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             removeButton.textContent = 'Remove';
             removeButton.className = 'remove-btn';
 
-             removeButton.addEventListener("click", function() {
+             removeButton.addEventListener("click", () => {
                 taskList.removeChild(li);
             });
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     addButton.addEventListener('click', addTask);
-    taskInput.addEventListener('keypress', function (event) {
+    taskInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
             addTask();
         }
